@@ -14,6 +14,7 @@ import { LogSignUpComponent } from './log-sign-up/log-sign-up.component';
 import {LoginService} from './login.service';
 import {SignUpService} from './signup.service';
 import { CONST_ROUTING } from './app.routing';
+import { HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   imports:      [ 
@@ -22,9 +23,11 @@ import { CONST_ROUTING } from './app.routing';
     BrowserAnimationsModule,
     MaterialModule, 
     ReactiveFormsModule,
-    CONST_ROUTING
+    CONST_ROUTING,
+    HttpClientModule
     ],
   declarations: [ AppComponent, HelloComponent, LogSignUpComponent ],
-  bootstrap:    [ AppComponent ]
+  bootstrap:    [ AppComponent ],
+  providers:[LoginService, SignUpService]
 })
 export class AppModule { }
