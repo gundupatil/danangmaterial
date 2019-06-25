@@ -1,16 +1,19 @@
-<div class="card" style="width:35rem">
-<article class="card-body">
-	<h4 class="card-title mt-3 text-center">Forgot Email</h4> 
-  <hr style="width:90%">
-  
-    <div *ngIf="resetFailure" class="alert alert-success">
-     Successfull
-    </div> 
+<div class="Aligner">
 
-	<form  #forgotEmail="ngForm" (ngSubmit)="forgotEmailSubmit(forgotEmail.value)" (keydown.enter)="$event.preventDefault()" >
-   <div class="form-group input-group">
-        <div class="col-sm-12 col-xs-12 col-md-12">
-          <input required name="forgotEmail" [(ngModel)] = "ForgotEmail" #forgotEmail="ngModel" class="form-control" placeholder="Email address" type="email" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"> 
+	<div class="Aligner-item">
+		<div class="card" style="width:35rem">
+			<article class="card-body">
+				<h4 class="card-title mt-3 text-center">Forgot Email</h4>
+				<hr style="width:90%">
+
+				<div *ngIf="resetFailure" class="alert alert-success">
+					Successfull
+				</div>
+
+				<form #forgotEmail="ngForm" (ngSubmit)="forgotEmailSubmit(forgotEmail.value)" (keydown.enter)="$event.preventDefault()">
+					<div class="form-group input-group">
+						<div class="col-sm-12 col-xs-12 col-md-12">
+							<input required name="forgotEmail" [(ngModel)] = "ForgotEmail" #forgotEmail="ngModel" class="form-control" placeholder="Email address" type="email" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"> 
              <div class="errors">
             <!-- <div *ngIf="regEmail.touched && regEmail.invalid ">
               Email is required.
@@ -70,3 +73,5 @@
 </form>
 </article>
 </div> <!-- card.// -->
+	</div>
+</div>
