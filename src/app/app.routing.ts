@@ -1,5 +1,6 @@
 
 import { LogSignUpComponent } from './log-sign-up/log-sign-up.component';
+import { ForgotComponent } from './forgot/forgot.component';
 import { Routes, RouterModule } from '@angular/router';
 
 const MAINMENU_ROUTES: Routes = [
@@ -8,9 +9,7 @@ const MAINMENU_ROUTES: Routes = [
   // { path: '', redirectTo: '/fishpage', pathMatch: 'full' },
 
   { path: 'login', component: LogSignUpComponent },
-
-
-
+  { path: 'forgot', component: ForgotComponent },
 
 ];
 export const CONST_ROUTING = RouterModule.forRoot(MAINMENU_ROUTES);

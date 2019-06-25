@@ -1,0 +1,72 @@
+<div class="card" style="width:35rem">
+<article class="card-body">
+	<h4 class="card-title mt-3 text-center">Forgot Email</h4> 
+  <hr style="width:90%">
+  
+    <div *ngIf="resetFailure" class="alert alert-success">
+     Successfull
+    </div> 
+
+	<form  #forgotEmail="ngForm" (ngSubmit)="forgotEmailSubmit(forgotEmail.value)" (keydown.enter)="$event.preventDefault()" >
+   <div class="form-group input-group">
+        <div class="col-sm-12 col-xs-12 col-md-12">
+          <input required name="forgotEmail" [(ngModel)] = "ForgotEmail" #forgotEmail="ngModel" class="form-control" placeholder="Email address" type="email" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"> 
+             <div class="errors">
+            <!-- <div *ngIf="regEmail.touched && regEmail.invalid ">
+              Email is required.
+            </div> -->
+            <small *ngIf="forgotEmail.invalid && forgotEmail.touched">
+                Email is required and format should be <i>john@doe.com</i>.
+              </small>
+          </div>
+        </div> 
+        
+     </div>
+                                         
+    <div class="form-group col-sm-12 col-xs-12 col-md-12">
+        <button [disabled]="reset.invalid" type="submit" class="btn btn-primary btn-block"> Submit  </button>
+    </div> <!-- form-group// -->      
+                                                           
+</form>
+</article>
+</div> <!-- card.// -->
+
+
+<div class="card" style="width:35rem">
+<article class="card-body">
+	<h4 class="card-title mt-3 text-center">Reset Password</h4> 
+  <hr style="width:90%">
+  
+    <div *ngIf="resetFailure" class="alert alert-success">
+     Reset Successfull
+    </div> 
+
+	<form  #reset="ngForm" (ngSubmit)="resetSubmit(reset.value)" (keydown.enter)="$event.preventDefault()" >
+   
+    <div class="form-group input-group">
+    	<div class="col-sm-12 col-xs-12 col-md-12">
+        <input required class="form-control" name="password" #password="ngModel" [(ngModel)] = "Password" placeholder="New password" type="password">
+          <div class="errors">
+          <div *ngIf="password.invalid && password.touched">
+            Password is required.
+          </div>
+    	</div>
+    	</div>
+    </div> 
+    <div class="form-group input-group">
+    	<div class="col-sm-12 col-xs-12 col-md-12">
+        <input required class="form-control" name="confirmpassword" #confirmPassword="ngModel" [(ngModel)] = "ConfirmPassword" placeholder="Repeat password" type="password"  Equalvalidate="password">
+          <div class="errors">
+          <div *ngIf="confirmPassword?.touched && confirmPassword?.invalid && confirmPassword?.dirty">
+           Password Mismatch.
+          </div>
+    	</div>
+    </div>
+    </div>                                       
+    <div class="form-group col-sm-12 col-xs-12 col-md-12">
+        <button [disabled]="reset.invalid" type="submit" class="btn btn-primary btn-block"> Reset  </button>
+    </div> <!-- form-group// -->      
+    <p class="text-center">Have an account? <a (click)="showLogin()" style="text-decoration:underline; cursor:pointer">Log In</a> </p>                                                          
+</form>
+</article>
+</div> <!-- card.// -->

@@ -15,7 +15,7 @@ import {LoginService} from './login.service';
 import {SignUpService} from './signup.service';
 import { CONST_ROUTING } from './app.routing';
 import { HttpClientModule} from '@angular/common/http';
-
+import { ForgotComponent } from './forgot/forgot.component';
 @NgModule({
   imports:      [ 
     BrowserModule,
@@ -26,7 +26,10 @@ import { HttpClientModule} from '@angular/common/http';
     CONST_ROUTING,
     HttpClientModule
     ],
-  declarations: [ AppComponent, HelloComponent, LogSignUpComponent ],
+  declarations: [ AppComponent,
+   HelloComponent, 
+   LogSignUpComponent,
+   ForgotComponent ],
   bootstrap:    [ AppComponent ],
   providers:[LoginService, SignUpService]
 })
