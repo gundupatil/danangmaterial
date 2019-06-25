@@ -4,11 +4,7 @@
 
 		<div *ngIf="!showSignUpPage" class="card" style="width:35rem">
 			<article class="card-body">
-				<div>
-					<a class="float-right btn btn-outline-primary" (click)="openSignUpPage()">Sign up</a>
-				</div>
-
-				<br>
+			
   <div> 
    
     	<h4 class="card-title text-center mb-4 mt-1">Sign in</h4>
@@ -39,10 +35,17 @@
                 <button type="submit" class="btn btn-primary btn-block"> Login  </button>
             </div> <!-- form-group// -->
         </div>
-        <div class="col-md-12 text-right">
+        <span class="col-md-6 text-left">
             <a class="small" routerLink="/forgot">Forgot password?</a>
 
-        </div>
+        </span>
+        	<span class="col-md-6 text-right">
+					<span>Don't have an account? 
+          <a style="text-decoration:underline; color:#0056b3; cursor:pointer" (click)="openSignUpPage()" >Sign up</a>
+          </span>
+				</span>
+
+				<br>
                                                 
     </div> <!-- .row// -->                                                                  
 </form>
