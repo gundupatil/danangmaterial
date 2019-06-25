@@ -1,7 +1,7 @@
-<div class="Aligner">
+<div  class="Aligner">
 
 	<div class="Aligner-item">
-		<div class="card" style="width:35rem">
+		<div *ngIf="!responseSuccess" class="card" style="width:35rem">
 			<article class="card-body">
 				<h4 class="card-title mt-3 text-center">Forgot Email</h4>
 				<hr style="width:90%">
@@ -27,7 +27,7 @@
      </div>
                                          
     <div class="form-group col-sm-12 col-xs-12 col-md-12">
-        <button [disabled]="reset.invalid" type="submit" class="btn btn-primary btn-block"> Submit  </button>
+        <button [disabled]="forgotEmail.invalid" type="submit" class="btn btn-primary btn-block"> Submit  </button>
     </div> <!-- form-group// -->      
                                                            
 </form>
@@ -35,7 +35,7 @@
 </div> <!-- card.// -->
 
 
-<div class="card" style="width:35rem">
+<div *ngIf="responseSuccess" class="card" style="width:35rem">
 <article class="card-body">
 	<h4 class="card-title mt-3 text-center">Reset Password</h4> 
   <hr style="width:90%">

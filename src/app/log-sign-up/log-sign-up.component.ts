@@ -24,7 +24,7 @@ Mobile;
 Password;
 ConfirmPassword;
 
- birthday = new Date(1988, 3, 15); // April 15, 1988
+
  
   constructor(private loginService:LoginService, private signUpService:SignUpService){
 

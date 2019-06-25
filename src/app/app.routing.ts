@@ -6,7 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 const MAINMENU_ROUTES: Routes = [
   //full : makes sure the path is absolute path
   //'/home', pathMatch: 'full
-  // { path: '', redirectTo: '/fishpage', pathMatch: 'full' },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
 
   { path: 'login', component: LogSignUpComponent },
   { path: 'forgot', component: ForgotComponent },

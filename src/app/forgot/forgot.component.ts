@@ -7,12 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ForgotComponent implements OnInit {
 
+  responseSuccess = false;
+
   constructor() { }
 
   ngOnInit() {
   }
-  
+
+  forgotEmailSubmit(vl){
+    console.log(vl);
+    this.responseSuccess =true ;
+  }
+
   resetSubmit(f){
     console.log(f);
+    
   }
 }
