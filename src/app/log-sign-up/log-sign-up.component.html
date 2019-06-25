@@ -1,0 +1,139 @@
+<div class="Aligner">
+
+	<div class="Aligner-item">
+
+		<div *ngIf="!showSignUpPage" class="card" style="width:35rem">
+			<article class="card-body">
+				<div>
+					<a class="float-right btn btn-outline-primary" (click)="openSignUpPage()">Sign up</a>
+				</div>
+
+				<br>
+  <div> 
+   
+    	<h4 class="card-title text-center mb-4 mt-1">Sign in</h4>
+      
+  </div>
+
+
+	<hr>
+ <!-- <div *ngIf="loginFailure" class="alert alert-danger">
+      Password or Email is wrong!
+    </div> -->
+    <div *ngIf="loginFailure" class="alert alert-success">
+      Login Successfull
+    </div>
+
+
+
+	<form  #f="ngForm" (ngSubmit)="loginSubmit(f.value)" (keydown.enter)="$event.preventDefault()" >
+    <div class="form-group">
+        <input name="email" [(ngModel)] = "LoginEmail" class="form-control" placeholder="Email or login" type="email">
+    </div> <!-- form-group// -->
+    <div class="form-group">
+        <input class="form-control" name="password" [(ngModel)] = "LoginPassword" placeholder="******" type="password">
+    </div> <!-- form-group// -->                                      
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-block"> Login  </button>
+            </div> <!-- form-group// -->
+        </div>
+        <div class="col-md-12 text-right">
+            <a class="small" href="#">Forgot password?</a>
+
+        </div>
+                                                
+    </div> <!-- .row// -->                                                                  
+</form>
+</article>
+</div> <!-- card.// -->
+
+
+<div *ngIf="showSignUpPage" class="card" style="width:35rem">
+<article class="card-body">
+	<h4 class="card-title mt-3 text-center">Create Account</h4> 
+  <hr style="width:90%">
+   <!-- <div *ngIf="signupFailure" class="alert alert-danger">
+     Something Went Wrong
+    </div>-->
+    <div *ngIf="signupFailure" class="alert alert-success">
+      Signup Successfull
+    </div> 
+
+	<form  #r="ngForm" (ngSubmit)="regSubmit(r.value)" (keydown.enter)="$event.preventDefault()" >
+	<div class="form-group input-group">
+      
+      <div class="col-sm-12 col-xs-12 col-md-12">
+        <input required name="fullname"  #fullname="ngModel" minlength="3" [(ngModel)] = "FullName"  class="form-control" placeholder="Full name" type="text">
+         <div class="errors">
+            <div *ngIf="fullname.invalid && fullname.touched">
+              Full name is required.
+            </div>
+             <div *ngIf="fullname.errors?.minlength">
+               Full Name should be atleast 3 characters
+          </div>
+
+          </div>
+      </div>
+       
+    </div> 
+     
+      <div class="form-group input-group">
+        <div class="col-sm-12 col-xs-12 col-md-12">
+          <input required name="regEmail" [(ngModel)] = "RegEmail" #regEmail="ngModel" class="form-control" placeholder="Email address" type="email" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"> 
+             <div class="errors">
+            <!-- <div *ngIf="regEmail.touched && regEmail.invalid ">
+              Email is required.
+            </div> -->
+            <small *ngIf="regEmail.invalid && regEmail.touched">
+                Email is required and format should be <i>john@doe.com</i>.
+              </small>
+          </div>
+        </div> 
+        
+     </div>
+
+  
+     <div class="form-group input-group">
+    	<div class="col-sm-12 col-xs-12 col-md-12">
+        <input required name="mobile" [(ngModel)] = "Mobile" #mobile="ngModel" class="form-control" placeholder="Mobile" type="mobile">
+        <div class="errors">
+            <div *ngIf="mobile.invalid && mobile.touched">
+             Mobile is required.
+            </div>
+    	</div>
+    </div> 
+     </div>
+    <div class="form-group input-group">
+    	<div class="col-sm-12 col-xs-12 col-md-12">
+        <input required class="form-control" name="password" #password="ngModel" [(ngModel)] = "Password" placeholder="Create password" type="password">
+          <div class="errors">
+          <div *ngIf="password.invalid && password.touched">
+            Password is required.
+          </div>
+    	</div>
+    	</div>
+    </div> 
+    <div class="form-group input-group">
+    	<div class="col-sm-12 col-xs-12 col-md-12">
+        <input required class="form-control" name="confirmpassword" #confirmPassword="ngModel" [(ngModel)] = "ConfirmPassword" placeholder="Repeat password" type="password"  Equalvalidate="password">
+          <div class="errors">
+          <div *ngIf="confirmPassword?.touched && confirmPassword?.invalid && confirmPassword?.dirty">
+           Password Mismatch.
+          </div>
+    	</div>
+    </div>
+    </div>                                       
+    <div class="form-group col-sm-12 col-xs-12 col-md-12">
+        <button [disabled]="r.invalid" type="submit" class="btn btn-primary btn-block"> Create Account  </button>
+    </div> <!-- form-group// -->      
+    <p class="text-center">Have an account? <a (click)="showLogin()" style="text-decoration:underline; cursor:pointer">Log In</a> </p>                                                                 
+</form>
+</article>
+</div> <!-- card.// -->
+  </div>
+ 
+</div>
+
+ <p>The hero's birthday is {{ birthday | date | uppercase }}</p>

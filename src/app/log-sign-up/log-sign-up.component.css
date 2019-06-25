@@ -1,0 +1,19 @@
+.Aligner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height:100vh;
+  width:100vw;
+
+}
+
+.Aligner-item {
+  max-width: 50%;
+}
+.errors{
+    color: #dd4b39;;
+}
+
+.form-control.ng-touched.ng-invalid{
+    border: 1px solid #dd4b39; 
+}
